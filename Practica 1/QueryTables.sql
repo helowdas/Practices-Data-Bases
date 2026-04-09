@@ -1,7 +1,7 @@
 /* Codigo SQL para crear las tablas de la base de datos*/
 
 CREATE TABLE Operadores(
-	ID_Operador INT,
+	ID_Operador INT  NOT NULL,
 	Nombre VARCHAR(30) NOT NULL,
 	Apellido VARCHAR(30) NOT NULL,
 	Cargo VARCHAR(20) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE Operadores(
 );
 
 CREATE TABLE Turnos(
-	ID_Turno INT,
+	ID_Turno INT  NOT NULL,
 	Nombre_Turno VARCHAR(10) NOT NULL CHECK(Nombre_Turno IN ('Mañana','Tarde','Noche')),
 	Hora_Inicio TIME NOT NULL,
 	Hora_Fin TIME NOT NULL,
@@ -17,22 +17,23 @@ CREATE TABLE Turnos(
 );
 
 CREATE TABLE Productos(
-	ID_Producto INT,
+	ID_Producto INT  NOT NULL,
 	Nombre VARCHAR(50) NOT NULL,
-	SKU_Precio_Base DECIMAL(10,2),
+	SKU VARCHAR(15),
+	Precio_Base DECIMAL(10,2) NOT NULL,
 	PRIMARY KEY(ID_Producto)
 );
 
 CREATE TABLE Maquinaria(
-	ID_Maquina INT,
+	ID_Maquina INT  NOT NULL,
 	Nombre VARCHAR(50) NOT NULL,
 	Area_Produccion VARCHAR(30) NOT NULL,
-	Estado VARCHAR(15),
+	Estado VARCHAR(15)  NOT NULL,
 	PRIMARY KEY (ID_Maquina)
 );
 
 CREATE TABLE Produccion(
-	ID_Registro INT,
+	ID_Registro INT  NOT NULL,
 	ID_Producto INT NOT NULL,
 	ID_Operador INT NOT NULL,
 	ID_Maquina INT NOT NULL,
@@ -47,7 +48,7 @@ CREATE TABLE Produccion(
 );
 
 CREATE TABLE Control_Calidad(
-	ID_Defecto INT,
+	ID_Defecto INT  NOT NULL,
 	ID_Registro INT NOT NULL,
 	Tipo_Defecto VARCHAR(30) NOT NULL,
 	Severidad VARCHAR(30) NOT NULL,
