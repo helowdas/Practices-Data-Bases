@@ -33,7 +33,8 @@ INSERT INTO Produccion (ID_Registro, ID_Producto, ID_Operador, ID_Maquina, ID_Tu
 (3, 2, 2, 3, 1, 30, '2026-04-27'), 
 (4, 3, 3, 2, 2, 15, '2026-04-27'), 
 (5, 4, 1, 1, 3, 10, '2026-04-27'), 
-(6, 1, 2, 3, 1, 40, '2026-04-28'); 
+(6, 1, 2, 3, 1, 40, '2026-04-28'),
+(7, 1, 2, 3, 1, 55, '2026-03-28');
 
 
 INSERT INTO Control_Calidad (ID_Defecto, ID_Registro, Tipo_Defecto, Severidad, Observaciones) VALUES
